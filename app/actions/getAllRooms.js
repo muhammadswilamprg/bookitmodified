@@ -1,25 +1,24 @@
 'use server';
-
 import { createAdminClient } from "@/config/appwrite";
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 
-async function getAllRooms() {
+export async function getAllRooms() {
   try {
     const { databases } = await createAdminClient();
-
-    const { documents: rooms } = await databases.listDocuments(
+    
+    const response = await databases.listDocuments(
       process.env.NEXT_PUBLIC_APPWRITE_DATABASE,
       process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_BOOKITCOLLECTION,
+      []
     );
 
-    revalidatePath('/', 'layout');
-
-    return rooms;
+    return response.documents;
   } catch (error) {
-    console.error('Failed to get rooms:', error);
-    redirect('/error');
+    console.error("Appwrite Error:", {
+      message: error.message,
+      code: error.code,
+      type: error.type,
+      response: error.response
+    });
+    throw error;
   }
 }
-
-export default getAllRooms;

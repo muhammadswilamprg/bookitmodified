@@ -10,7 +10,7 @@ const Header = () => {
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center">
                         <Link href="/">
-                            <Image className="h-12 w-12" src={logo} alt="Bookit" priority={true}/>
+                            <Image className="h-12 w-12" src={logo} alt="Bookit" />
                         </Link>
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4">
@@ -21,13 +21,13 @@ const Header = () => {
                                     Rooms
                                 </Link>
                                 <Link
-                                    href="/bookings.html"
+                                    href="/bookings"
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
                                 >
                                     Bookings
                                 </Link>
                                 <Link
-                                    href="/add-room.html"
+                                    href="/rooms/add"
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
                                 >
                                     Add Room
@@ -38,22 +38,22 @@ const Header = () => {
                     <div className="ml-auto">
                         <div className="ml-4 flex items-center md:ml-6">
                             <Link
-                                href="login.html"
+                                href="/login"
                                 className="mr-3 text-gray-800 hover:text-gray-600"
                             >
                                 <FaSignInAlt className="inline mr-1" /> Login
                             </Link>
                             <Link
-                                href="register.html"
+                                href="/register"
                                 className="mr-3 text-gray-800 hover:text-gray-600"
                             >
                                 <FaUser className="inline mr-1" /> Register
                             </Link>
-                            <Link href="my-rooms.html">
+                            <Link href="/rooms/my">
                                 <FaBuilding className="inline mr-1" /> My Rooms
                             </Link>
                             <Link
-                                href="login.html"
+                                href="/login"
                                 className="mx-3 text-gray-800 hover:text-gray-600"
                             >
                                 <FaSignOutAlt className="inline mr-1" /> Sign Out
@@ -71,13 +71,13 @@ const Header = () => {
                         Rooms
                     </Link>
                     <Link
-                        href="/bookings.html"
+                        href="/bookings"
                         className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
                     >
                         Bookings
                     </Link>
                     <Link
-                        href="/add-room.html"
+                        href="/rooms/add"
                         className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
                     >
                         Add Room
